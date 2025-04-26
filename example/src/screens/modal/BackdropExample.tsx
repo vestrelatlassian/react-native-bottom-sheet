@@ -67,32 +67,36 @@ export const BackdropExample = () => {
     []
   );
   return (
-    <View style={styles.container}>
-      <Button label="Present Modal" onPress={handlePresentPress} />
-      <Button
-        label={`Toggle Press Behavior: ${backdropPressBehavior}`}
-        onPress={handleTogglePressBehavior}
-      />
-      <Button label="Expand" onPress={handleExpandPress} />
-      <Button label="Collapse" onPress={handleCollapsePress} />
-      <Button label="Close" onPress={handleClosePress} />
-      <BottomSheetModal
-        ref={bottomSheetRef}
-        snapPoints={snapPoints}
-        enableDynamicSizing={false}
-        handleComponent={renderHeaderHandle}
-        backdropComponent={renderBackdrop}
-        onDismiss={handleDismiss}
-      >
-        <ContactList type="View" count={5} />
-      </BottomSheetModal>
+    <View style={{ flex: 1 }}> 
+      <View style={{ flex: 1 }}/> 
+      <View style={styles.container}>
+        <Button label="Present Modal" onPress={handlePresentPress} />
+        <Button
+          label={`Toggle Press Behavior: ${backdropPressBehavior}`}
+          onPress={handleTogglePressBehavior}
+        />
+        <Button label="Expand" onPress={handleExpandPress} />
+        <Button label="Collapse" onPress={handleCollapsePress} />
+        <Button label="Close" onPress={handleClosePress} />
+        <BottomSheetModal
+          ref={bottomSheetRef}
+          snapPoints={snapPoints}
+          enableDynamicSizing={false}
+          handleComponent={renderHeaderHandle}
+          backdropComponent={renderBackdrop}
+          onDismiss={handleDismiss}
+        >
+          <ContactList type="View" count={5} />
+        </BottomSheetModal>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: 200,
+    backgroundColor: 'red',
     padding: 24,
   },
 });
