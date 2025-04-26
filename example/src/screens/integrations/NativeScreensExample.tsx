@@ -22,6 +22,7 @@ const RootScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'green',
     padding: 24,
   },
 });
@@ -39,7 +40,7 @@ export default withModalProvider(() => (
       name="NativeModal"
       component={ModalBackdropExample}
       options={{
-        presentation: 'modal',
+        presentation: 'transparentModal',
         headerShown: Platform.OS === 'ios',
       }}
     />
